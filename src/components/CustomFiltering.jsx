@@ -93,7 +93,7 @@ function CustomFiltering({setColumnFilters,table}) {
     const handleSetFilters = ()=>{
    
  console.log(selectedRange);
-      setColumnFilters([{id:'name',"value":Name},{id:'price',"value":value},{id:'createdAt',"value":[selectedRange.startDate,selectedRange.endDate]},{id:"category",value:personName}]);
+      setColumnFilters([{id:'name',"value":Name},{id:'price',"value":value},{id:'sale_price',"value":val},{id:'category',"value":personName},{id:'subcategory',"value":personNam}]);
     }
 
   const category = []

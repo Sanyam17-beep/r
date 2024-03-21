@@ -28,7 +28,8 @@ export const columns = [
       id:'subcategory',
       accessorKey: 'subcategory',
       header: 'Subcategory',
-      size:20
+      size:20,
+      filterFn:'contains'
     },
     {
       accessorFn: (row) => formatDate(row.createdAt),
@@ -41,12 +42,13 @@ export const columns = [
        
     },
     {
-      accessorFn: (row) => formatDate(row.updatedAt),
+      accessorFn: (originalRow) => new Date(originalRow.updatedAt),
         id: 'updatedAt',
         header: 'Updated At',
         accessorKey:"updatedAt",
         size:20,
-        filterFn: 'between',
+        filterVariant: 'date-range',
+        Cell: ({ cell }) => cell.getValue().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' }),
     },
     {
         id:'price',
@@ -60,6 +62,7 @@ export const columns = [
       accessorKey: 'sale_price',
       header: 'Sales Price',
       filterFn: 'between',
+      filterFn : (value) => value !== null,
       size:5
     },
   ];
