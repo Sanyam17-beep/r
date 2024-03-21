@@ -301,7 +301,7 @@ const subcategory = []
       />
       
     </Box>
-    <Button variant="contained" onClick={()=>{
+    <Button variant="contained" color='info' onClick={()=>{
       setName("");
       setPersonName([]);
       setPersonNam([]);
