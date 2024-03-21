@@ -98,10 +98,12 @@ function CustomFiltering({setColumnFilters,table}) {
 
   const category = []
   data.forEach(data => {
+    if (!category.includes(data.category))
     category.push(data.category);
 });
 const subcategory = []
   data.forEach(data => {
+    if (!subcategory.includes(data.subcategory))
     subcategory.push(data.subcategory);
 });
    return (
